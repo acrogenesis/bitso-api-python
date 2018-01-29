@@ -23,7 +23,6 @@ print bcolors.BOLD + "\nOrder bok for ETH/BTC: \n" + bcolors.ENDC + order_book("
 print bcolors.BOLD + "\nTrades for ETH/BTC: \n" + bcolors.ENDC + trades("eth_btc")
 
 
-
 print bcolors.HEADER +  "\n\n## bitso private api ##\n\n"  + bcolors.ENDC
 print bcolors.BOLD + "\nAccount Status: \n" + bcolors.ENDC + account_status()
 
@@ -47,7 +46,6 @@ print bcolors.BOLD + "\nopen orders: \n" + bcolors.ENDC + open_orders("eth_btc")
 
 print bcolors.BOLD + "\norders: \n" + bcolors.ENDC + orders("HffYZ3k3Ff8ESgMM")
 print bcolors.BOLD + "\norders: \n" + bcolors.ENDC + orders("HffYZ3k3Ff8ESgMM-ov4RUy1hPlLO2WC")
-
 
 #print bcolors.BOLD + "\n cancel orders: \n" + bcolors.ENDC + cancel_orders("C4CqAlX0mY5ogLVH")
 
