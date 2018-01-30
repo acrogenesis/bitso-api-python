@@ -58,3 +58,21 @@ def getAuthHeader(key, nonce, signature):
 	return 'Bitso %s:%s:%s' % (key, nonce, signature)
 
 
+## Bitso Autorization Headers START
+def getAutorizationHeader(http_method, endpoint, json_payload=""):
+	nonce = getNonce();
+	message = getMessage(nonce, http_method, endpoint, json_payload)
+	signature = getSignature(bitso_secret, message)
+	auth_header = getAuthHeader(bitso_key, nonce, signature )
+	return auth_header
+
+def getAuthorizationHeaderGET(endpoint):
+	return getAutorizationHeader("GET", endpoint)
+
+def getAuthorizationHeaderPOST(endpoint, json_payload=""):
+	return getAutorizationHeader("POST", endpoint, json_payload)
+
+def getAuthorizationHeaderDELETE(endpoint):
+	return getAutorizationHeader("DELETE", endpoint)
+## Bitso Autorization Headers END
+
